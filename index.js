@@ -35,9 +35,11 @@ app.post('/cadastro',(req,res)=>{
           text: ``, // plain text body
           html: 
           
-          `<h1>Olá ${nome} ${sobrenome}, obrigado por se cadastrar no nosso formulario de contato </h1>
+          `<h1>Olá ${nome} ${sobrenome} , obrigado por se cadastrar no nosso formulario de contato </h1>
           <br>
-          <h2>Aqui lhe passo um folder sobre o turismo da nossa maravilhosa cidade de São Leopoldo</h2>
+          <h2>Aqui lhe passo um folder sobre o evento atual na cidade</h2>
+
+          ${`<a href="https://www.instagram.com/saoleofest2024/profilecard/?igsh=MTl1YnRkaHA4Z3BoaA==" target="_blank">Folder</a> São Leopoldo Fest 2024`}
           `
           
           , // html body
