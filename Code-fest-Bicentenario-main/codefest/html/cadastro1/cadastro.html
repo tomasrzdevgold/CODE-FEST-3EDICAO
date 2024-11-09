@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="cad.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+        <ul class="topbar">
+        <li><a href="/codefest/html/inicio/index.html">Início</a></li>
+          <li><a class="active" href="/codefest/html/agenda/calendario.html">Lugares e encontros</a></li>
+          <li><a href="/codefest/html/cadastro1/cadastro.html">Para mais informações</a></li>
+          <li class="icon" onclick="menuResponsivo()">
+            <a href="javascript:void(0)">&#9776;</a>
+          </li>
+        </ul>
+      </nav>
+<body>
+   
+    <div id="centro">
+<section>
+
+<form id="formulario"  action="http://localhost:3000/cadastro" method="post" name="form1" >
+    
+    <legend id="titulo">Formulario de Cadastro</legend>
+    <br>
+
+    <div id="grupo-nome">
+        <label for="name" id="titulo">Nome:</label>
+        <input type="text" id="name" name="nome" pattern="[aA-zZ]+" required maxlength="45" />
+        <br><br>
+    </div>
+
+    <label for="sobrenome" id="titulo">Sobrenome:</label>
+    <input type="text" id="sobrenome" name="sobrenome" pattern="[aA-zZ]+" required maxlength="45"/>
+
+<br> <br>
+
+        <label for="email" id="titulo">Email:</label>
+        <input type="email" id="email" name="email"  required maxlength="45"/>
+        <br> <br>
+    
+        <label for="celular" id="titulo">Celular:</label>
+        <input type="text" id="celular" name="celular" pattern="[0-9]{2}-[0-9]{4,6}-[0-9]{3,4}$" required maxlength="45"/>
+        <br>
+        
+        <br> <br>
+    
+        <label for="mensagem" id="titulo">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" cols="33">
+            </textarea>
+        
+        <br>
+     
+       
+<br><br><br>
+    
+   <!--  <button id="boton" type="submit">Enviar</button>--> 
+    
+    <button type="reset">limpar</button>
+<br>
+    <input id="boton" class="enviar" type="submit">
+ 
+   <!-- <p class="envio">Envio com succeso</p> -->
+    
+    </form>
+
+</section>
+</div>   
+<script> 
+
+const formulario = document.getElementById('formulario')
+const inputs = document.querySelectorAll('#formulario input')
+const selects = document.getElementById('estados')
+const element = document.getElementById("boton")
+
+const campos = {
+nome: false,
+email: false,
+genero: false
+
+}
+
+
+
+const expressoes = {
+nome : /^[a-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑA-Z]{2,}$/ ,
+email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+}
+
+
+const validarFormulario = (e)=>{ 
+switch (e.target.name) {
+    case "nome" :
+        if(test(nome)){
+            campos["nome"] = true
+        }else{
+            campos["nome"] = false
+            
+        }
+
+  
+
+    break
+    case "email" :
+        if(expressoes.email.test(e.target.value)){
+            document.querySelector('.formulario-email-erro').classList.remove('formulario-email-erro-ativo')
+            campos["email"] = true
+        }else {
+            document.querySelector('.formulario-email-erro').classList.add('formulario-email-erro-ativo')
+            campos["email"] = false
+        }
+    break
+
+}
+}
+
+
+
+
+
+
+
+inputs.forEach((input)=>{
+input.addEventListener('blur',validarFormulario)
+input.addEventListener('blur',validar)
+
+})
+
+
+function validar () {
+
+    if(campos.nome && campos.email && campos.genero){
+    document.querySelector('.enviar').classList.add('enviar-ativo')
+  
+} else {
+    document.querySelector('.enviar').classList.remove('enviar-ativo')
+
+}
+}
+
+
+
+
+
+formulario.addEventListener('reset', (e) => {
+formulario.reset()
+document.querySelector('.enviar').classList.remove('enviar-ativo')
+
+}) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+   
+
+</body>
+
+</html>
+
+
+
+

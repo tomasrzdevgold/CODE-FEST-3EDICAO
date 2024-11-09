@@ -1,0 +1,370 @@
+.imagem-inicio {
+  width: 100%;
+  height: 100vh; /* ou 100vh para tela inteira */
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+  margin-top: -7em; /* Negativo da altura da topbar */
+  border-bottom: 8px solid #000000; /* Vermelho da bandeira de São Leopoldo */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
+#fotoinicio {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+/* Adiciona o overlay (sombra) */
+.imagem-inicio::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Ajuste o último valor (0.5) para mais claro ou mais escuro */
+  /* Ou use um gradiente para um efeito mais elaborado: */
+  /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)); */
+}
+
+/* Ajuste no menu para garantir que fique por cima da imagem */
+.topbar {
+  background: linear-gradient(90deg, #1E3C72 0%, #000000 50%, #070704 100%);
+  position: fixed; /* Mantém a barra fixa */
+  top: 0; /* Fixa no topo */
+  left: 0; /* Alinha à esquerda */
+  width: 100%; /* Ocupa toda a largura */
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove padding */
+  z-index: 1000; /* Garante que fique acima de tudo */
+  height: 7em;
+  line-height: 3em;
+}
+.container {
+  width: 100%;
+  background-color: #303030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* elemento pai */
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha se necessário */
+  gap: 80px; /* Espaçamento entre os círculos */
+  margin-top: 150px; /* Espaço após a imagem-inicio */
+}
+
+.img-box {
+  width: 200px; /* Tamanho fixo para criar círculos perfeitos */
+  height: 200px;
+  border-radius: 50%; /* Torna a imagem circular */
+  position: relative;
+  overflow: hidden; /* Garante que a imagem fique dentro do círculo */
+  cursor: pointer;
+  ;
+}
+
+.img-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(188, 162, 162, 0.5); /* Overlay escuro */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-box:hover::before {
+  opacity: 1; 
+ transition: width 0.7s ease-out;
+ transition: all 0.7s ease-out;
+ 
+}
+
+.img-box:hover {
+  transition: all 0.3s ease-out;
+  transform: scale(1.1);
+}
+
+/* Ajuste para todas as imagens */
+.img-box:nth-child(1){
+  background-image:  url(foto1.jpg);
+  background-size: cover;
+  object-fit: cover;
+}
+  .img-box:nth-child(2){
+    background : url(maria.jpg);
+    background-size: cover;
+    object-fit: cover    
+  }
+.img-box:nth-child(3){
+  background: url(museu.jpg) ;
+  background-size: cover;
+  object-fit: cover  
+}
+.img-box:nth-child(4){
+  background: url(canela.jpg);
+  background-size: cover;
+  object-fit: cover  
+}
+.img-box:nth-child(5) {
+  background: url(imperatriz.webp);
+  background-size: cover;
+  object-fit: cover
+}
+
+
+#centro {
+  margin-top: 50px; /* ajuste conforme necessário */
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+body {
+  height: 100vh;
+  font-size: 1.3em;
+  margin: 0;
+  padding-top: 7em; /* Mesmo valor da altura da topbar */
+}
+
+
+#topo{
+  width: 10rem;
+  border-radius: 1rem;
+}
+
+#topo1{
+  width: 20rem;
+  border-radius: 3rem;
+}
+
+#topo2{
+  width: 40rem;
+  border-radius: 3rem;
+}
+
+#topo3{
+  width: 40rem;
+  border-radius: 3rem;
+}
+
+h1,
+h2,
+p {
+  padding-top: -70px;
+  padding-bottom: 10px;
+  color: #fff;
+  margin: 10px;
+  text-align: left;
+}
+
+.filho{
+  width: 40rem;
+  border-radius: 2rem;
+  margin-left: 65rem;
+  margin-top: -2rem;
+}
+
+#title{
+  background: rgba(48, 51, 155, 0.833);
+  border-radius: 1rem;
+}
+
+#historia{
+  background: linear-gradient(90deg, #010917 0%, #2A5298 100%); /* Azul escuro */
+  border-radius: 1rem;
+  margin-top: 7rem;
+  border-radius: 1rem;
+  margin-block-end: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+#comemorar{
+  background: linear-gradient(90deg, #010917 0%, #2A5298 100%); /* Vermelho */
+  border-radius: 1rem;
+  margin-block-end: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#monumento{
+  background: linear-gradient(90deg, #010917 0%, #2A5298 100%); /* Amarelo */
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+#monumento h2,
+#monumento p {
+  color:#ffff; /* Texto preto para melhor contraste no fundo amarelo */
+}
+
+#centro {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items:  left;
+  font-size: 1em;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  padding-top: 7rem;
+}
+
+#centro a {
+  color: #fff;
+  text-decoration: none; /*Remove o underline do Link a*/
+}
+
+
+/* Item ativo */
+ul.topbar li a.active {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* Traço embaixo do item */
+li > a::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 5px;
+  width: 0;
+  top: 5px;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+li > a:hover::after,
+li > a.active::after {
+  width: 100%;
+  background: #fff;
+}
+
+/* Remove as margens, define tamanho do menu para 100%, e adiciona uma cor de fundo */
+ul.topbar {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%,  rgb(10, 161, 225) 100%);position: absolute;
+  right: 0;
+  top: 0;
+  height: 7em;
+  line-height: 3em;
+  width: 100%
+}
+
+/* Coloca os itens da lista do Menu lado a lado, e flutua os itens para a esquerda */
+ul.topbar li {
+  display: inline-block;
+  margin-left: 0.5em;
+  font-size: 0.9em;
+}
+
+/* Estilo dos links dentro da lista */
+ul.topbar li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  height: 3em;
+  line-height: 3em;
+  padding: 0 0.3em 0 0.3em;
+  outline: 0;
+  font-weight: bold;
+}
+
+/* Altera a cor do link quando passa o mouse em cima*/
+ul.topbar li a:hover {
+  color: #fff;
+}
+
+/* Esconde os itens da lista quando a resolução da tela for pequena */
+ul.topbar li.icon {
+  display: none;
+}
+
+/* Quando a tela é menor do que 680 pixels de largura, ocultar todos os itens da lista. Mostra o item da lista que contém o link para abrir e fechar a nav superior (li.icon) */
+@media screen and (max-width: 680px) {
+  ul.topbar li {
+    display: none;
+  }
+  ul.topbar li.icon {
+    display: block;
+    float: right; /*O ícone será exibido ao lado direito*/
+  }
+}
+
+/*A classe responsiva é adicionada à ul superior com o JavaScript quando o usuário clica no ícone. Esta classe faz com que os itens principais do menu fiquem ok em telas menores */
+@media screen and (max-width: 680px) {
+  ul.topbar.responsive {
+    position: relative;
+    background: rgba(13, 12, 13, 0.8);
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    line-height: 5px;
+    width: 100%;
+  }
+  ul.topbar.responsive li.icon {
+    position: absolute;
+    margin-right: 10px;
+    right: 0;
+    top: 0;
+  }
+  ul.topbar.responsive li {
+    text-align: center;
+    float: none;
+    padding: 0;
+    display: inline;
+  } 
+  ul.topbar.responsive li a {
+    display: block;
+    padding: 0;
+    text-align: center;
+  }
+
+  li > a::after {
+    height: 2px;
+  }
+  li > a:hover::after,
+  li > a.active::after {
+    width: 20%;
+    background: #fff;
+  }
+}
+
+.logo-corner {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001; /* Maior que a topbar para ficar na frente */
+}
+
+.logo-corner img {
+  width: 100px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+}
